@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
+// Apply the App Distribution Gradle plugin
+apply plugin: 'com.google.firebase.appdistribution'
 
 android {
     compileSdkVersion 30
@@ -21,6 +23,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            firebaseAppDistribution {
+                releaseNotes = "Release notes for full version"
+                testers = "pardeep.panchal@firminiq.com"
+            }
         }
     }
 }
