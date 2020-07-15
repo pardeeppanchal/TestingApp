@@ -18,11 +18,11 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Gradle
-      #run: chmod +x gradlew
-	    run: chmod +x assembleDebug
-# Step to save the APK as Artifacts
+      run: chmod +x gradlew assembleDebug
+      	# Step to save the APK as Artifacts
     - name: Upload APK on Build Artifacts
       uses: actions/upload-artifact@v1
       with:
         name: app
         path: app/build/outputs/apk/debug/app-debug.apk
+
