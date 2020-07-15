@@ -27,6 +27,7 @@ android {
             firebaseAppDistribution {
                 releaseNotes = "Release notes for full version"
             }
+
         }
     }
 }
