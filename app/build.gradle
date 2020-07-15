@@ -26,7 +26,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             firebaseAppDistribution {
                 releaseNotes = "Release notes for full version"
-                testers = "pardeep.panchal@firminiq.com"
             }
         }
     }
