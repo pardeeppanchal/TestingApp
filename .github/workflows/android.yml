@@ -18,7 +18,7 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Gradle
-      run:  chmod + gradlew assembleStagingDebug
+      run:  bash ./gradlew assembleStagingDebug
     # Step to save the APK as Artifacts
     - name: Upload APK on Build Artifacts
       uses: actions/upload-artifact@v1
