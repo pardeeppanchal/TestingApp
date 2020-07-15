@@ -18,15 +18,13 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Gradle
-      env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      run:  ./gradlew assembleRelease appDistributionUploadRelease
+      run:  ./gradlew assembleDebug
     # Step to Submit the generated APK to Firebase App Distribution
-    #- name: upload artifact to Firebase App Distribution
-    #  uses: w9jds/firebase-action@master
-    #  with:
-    #    appId: ${{ secrets.FIREBASE_APP_ID }}
-    #    token: ${{ secrets.FIREBASE_TOKEN }}
-    #    groups: Testers
-    #    file: app/build/outputs/apk/debug/app-debug.apk
+    - name: upload artifact to Firebase App Distribution
+      uses: Firebase-Distribution/Github-Action@v1.2.1
+      with:
+        appId: ${{ secrets.FIREBASE_APP_ID }}
+        token: ${{ secrets.FIREBASE_TOKEN }}
+        groups: Testers
+        file: app/build/outputs/apk/debug/app-debug.apk
 
